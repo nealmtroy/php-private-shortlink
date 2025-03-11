@@ -1,0 +1,171 @@
+body {
+            background-color: #1a202c;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .card {
+            background-color: #1a202c;
+            border: 1px solid #4a5568;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 1s ease-in-out;
+        }
+        .card-body {
+            color: #e2e8f0;
+        }
+        .table {
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        .table-hover tbody tr {
+            transition: all 0.3s ease;
+        }
+        .table-hover tbody tr:hover {
+            background-color: #2d3748; /* Only background color changes */
+        }
+        .table thead th {
+            background-color: #2d3748;
+            color: #f7fafc;
+            border-bottom: 1px solid #4a5568;
+        }
+        .table tbody td {
+            border-bottom: 1px solid #4a5568;
+        }
+        .table .action-column {
+            text-align: right;
+        }
+        .progress {
+            height: 8px;
+            margin-top: 4px;
+            background-color: #4a5568;
+        }
+        .progress-bar-human {
+            background-color: #48bb78;
+        }
+        .progress-bar-robot {
+            background-color: #e53e3e;
+        }
+        .badge.bg-success {
+            background-color: #48bb78;
+        }
+        .badge.bg-danger {
+            background-color: #e53e3e;
+        }
+        .badge.bg-primary {
+            background-color: #3182ce;
+        }
+        .badge-total {
+            font-size: 0.9rem;
+            padding: 0.4em 0.8em;
+            background-color: #3182ce;
+        }
+        .btn-danger {
+            background-color: #c53030;
+            border-color: #c53030;
+            transition: all 0.3s ease;
+        }
+        .btn-danger:hover {
+            background-color: #e53e3e;
+            border-color: #e53e3e;
+            transform: scale(1.05);
+        }
+        .btn-warning {
+            background-color: #d69e2e;
+            border-color: #d69e2e;
+            transition: all 0.3s ease;
+        }
+        .btn-warning:hover {
+            background-color: #ecc94b;
+            border-color: #ecc94b;
+            transform: scale(1.05);
+        }
+        .btn-secondary {
+            background-color: #4a5568;
+            border-color: #4a5568;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #718096;
+            border-color: #718096;
+            transform: scale(1.05);
+        }
+        .btn-navy {
+            background-color: #1a365d;
+            border-color: #1a365d;
+            color: #f7fafc;
+            transition: all 0.3s ease;
+        }
+        .btn-navy:hover {
+            background-color: #2b6cb0;
+            border-color: #2b6cb0;
+            transform: scale(1.05);
+        }
+        .btn-primary {
+            background-color: #1a365d;
+            border-color: #1a365d;
+            color: #f7fafc;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #2b6cb0;
+            border-color: #2b6cb0;
+            transform: scale(1.05);
+        }
+        .form-control {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            border-color: #4a5568;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            border-color: #3182ce;
+            box-shadow: 0 0 10px rgba(49, 130, 206, 0.5);
+        }
+        .form-floating label {
+            color: #a0aec0;
+        }
+        .input-group .btn {
+            border-color: #4a5568;
+        }
+        .alert-success {
+            background-color: #2f855a;
+            color: #f7fafc;
+            border-color: #48bb78;
+        }
+        .alert-danger {
+            background-color: #9b2c2c;
+            color: #f7fafc;
+            border-color: #e53e3e;
+        }
+        /* Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes neonPulse {
+            0% {
+                text-shadow: 0 0 5px #3182ce, 0 0 10px #3182ce, 0 0 15px #3182ce;
+            }
+            100% {
+                text-shadow: 0 0 10px #3182ce, 0 0 20px #3182ce, 0 0 30px #3182ce;
+            }
+        }
+        .neon-text {
+            animation: neonPulse 2s infinite alternate;
+        }

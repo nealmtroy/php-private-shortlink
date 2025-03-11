@@ -1,0 +1,99 @@
+        body {
+            background-color: #1a202c;
+            color: #e2e8f0;
+            font-family: 'Arvo', serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            overflow: hidden;
+        }
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .login-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+            position: relative;
+            z-index: 1;
+        }
+        .card {
+            background-color: #1a202c;
+            border: 1px solid #4a5568;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        .card-body {
+            padding: 2rem;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .logo h3 {
+            color: #e2e8f0;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            animation: neonPulse 2s infinite alternate;
+        }
+        .form-floating label {
+            color: #a0aec0;
+        }
+        .form-control {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            border-color: #4a5568;
+            transition: all 0.3s ease;
+        }
+        .form-control:focus {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            border-color: #3182ce;
+            box-shadow: 0 0 10px rgba(49, 130, 206, 0.5);
+        }
+        .btn-navy {
+            background-color: #1a365d;
+            border-color: #1a365d;
+            color: #f7fafc;
+            width: 100%;
+            padding: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .btn-navy:hover {
+            background-color: #2b6cb0;
+            border-color: #2b6cb0;
+            color: #f7fafc;
+            transform: scale(1.05);
+        }
+        .alert-danger {
+            background-color: #9b2c2c;
+            color: #f7fafc;
+            border-color: #e53e3e;
+            font-size: 0.875rem;
+            padding: 10px;
+            margin-bottom: 1rem;
+            animation: shake 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes neonPulse {
+            0% { text-shadow: 0 0 5px #3182ce, 0 0 10px #3182ce, 0 0 15px #3182ce; }
+            100% { text-shadow: 0 0 10px #3182ce, 0 0 20px #3182ce, 0 0 30px #3182ce; }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
